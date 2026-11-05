@@ -1,0 +1,10 @@
+{
+  "name": "LOTO INTELIGENTE",
+  "short_name": "Loto Inteligente",
+  "description": "Análise matemática, probabilidades e organização de jogos lotéricos.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "icons": []
+}

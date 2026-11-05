@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="description" content="LOTO INTELIGENTE — análise matemática, probabilidades e organização de jogos lotéricos." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>LOTO INTELIGENTE</title>
+</head>
+<body>
+  <section class="auth-gate" id="authGate">
+    <div class="auth-card">
+      <div class="brand auth-brand"><div class="brand-mark">L<span>✦</span></div><div><strong>LOTO <em>INTELIGENTE</em></strong><small>ACESSO PRIVADO</small></div></div>
+      <h1 id="authTitle">Entre na sua conta</h1>
+      <p class="muted" id="authDescription">Acesse seus jogos e análises com segurança.</p>
+      <form id="authForm">
+        <label for="authEmail">E-mail</label><input id="authEmail" type="email" autocomplete="email" required placeholder="seu@email.com">
+        <label for="authPassword">Senha</label><input id="authPassword" type="password" autocomplete="current-password" minlength="6" required placeholder="Mínimo de 6 caracteres">
+        <button class="gold-button full" id="authSubmit" type="submit">Entrar</button>
+      </form>
+      <button class="text-button auth-toggle" id="authToggle" type="button">Ainda não tenho conta · Criar cadastro</button>
+      <p class="auth-message" id="authMessage" role="status"></p>
+      <small class="auth-foot">Se o cadastro exigir confirmação, verifique seu e-mail.</small>
+    </div>
+  </section>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">L<span>✦</span></div>
+        <div><strong>LOTO <em>INTELIGENTE</em></strong><small>CENTRAL DE ANÁLISES</small></div>
+      </div>
+      <div class="side-label">MENU PRINCIPAL</div>
+      <nav class="nav-list" aria-label="Menu principal">
+        <button class="nav-item active" data-view="dashboard"><span>⌂</span> Visão geral</button>
+        <button class="nav-item" data-view="generator"><span>✳</span> Gerador de jogos</button>
+        <button class="nav-item" data-view="probabilities"><span>▦</span> Probabilidades</button>
+        <button class="nav-item" data-view="statistics"><span>⌁</span> Estatísticas</button>
+        <button class="nav-item" data-view="history"><span>◷</span> Meus jogos</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="private-chip"><span class="status-dot"></span> Área privada</div>
+        <div class="user-card"><div class="avatar">A</div><div><strong>Área pessoal</strong><small>Conta autenticada</small></div><span class="more">•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menu">☰</button>
+        <div class="breadcrumb">LOTO INTELIGENTE <span>/</span> <b id="crumb">Visão geral</b></div>
+        <div class="top-actions"><span class="data-status"><i></i> Banco conectado</span><button class="outline-button" id="signOutBtn" type="button">Sair</button><button class="icon-button" id="helpBtn" title="Sobre o sistema">?</button></div>
+      </header>
+
+      <section class="view active" id="view-dashboard">
+        <div class="welcome-row"><div><div class="eyebrow">PAINEL DE CONTROLE</div><h1>Visão geral</h1><p class="muted">Estatística, organização e probabilidade — sem promessas de previsão.</p></div><div class="date-pill" id="today"></div></div>
+        <div class="hero-card"><div class="hero-copy"><span class="hero-kicker">ANÁLISE COM RESPONSABILIDADE</span><h2>Decisões melhores começam com<br><em>informação confiável.</em></h2><p>Explore probabilidades reais, monte combinações e acompanhe seus jogos em um só lugar.</p><button class="gold-button" data-go="generator">Criar combinações <span>→</span></button></div><div class="hero-orbit"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="gold-ball">L</div><b class="float-ball ball-a">07</b><b class="float-ball ball-b">23</b><b class="float-ball ball-c">41</b><b class="float-ball ball-d">56</b></div></div>
+        <div class="section-heading"><div><h2>Modalidades</h2><p class="muted">Selecione uma loteria para analisar.</p></div><span class="count-label">12 modalidades</span></div>
+        <div class="lottery-grid" id="lotteryGrid"></div>
+        <div class="bottom-grid"><div class="panel"><div class="panel-title"><div><h3>Ferramentas disponíveis</h3><p>Recursos da primeira versão</p></div><span class="panel-icon">✦</span></div><div class="tool-list"><div><span class="tool-symbol">⌗</span><section><b>Combinações aleatórias</b><small>Geração sem repetição dentro de cada jogo.</small></section><span class="tool-check">✓</span></div><div><span class="tool-symbol">%</span><section><b>Probabilidade combinatória</b><small>Cálculos transparentes e verificáveis.</small></section><span class="tool-check">✓</span></div><div><span class="tool-symbol">▤</span><section><b>Histórico pessoal</b><small>Salve e compare jogos neste dispositivo.</small></section><span class="tool-check">✓</span></div></div></div><div class="panel note-panel"><div class="note-icon">ⓘ</div><div><h3>Importante saber</h3><p>Resultados anteriores não alteram a chance matemática de um número sair no próximo sorteio. Frequência e atraso são descrições do passado, não previsões.</p><small>Login privado e salvamento em nuvem ativos. Resultados oficiais serão conectados em etapa própria.</small></div></div></div>
+      </section>
+
+      <section class="view" id="view-generator">
+        <div class="eyebrow">FERRAMENTA DE CRIAÇÃO</div><h1>Gerador de jogos</h1><p class="muted page-intro">Monte combinações aleatórias com critérios opcionais. Os filtros não aumentam a chance individual de uma combinação.</p>
+        <div class="workspace"><div class="panel config-panel"><div class="panel-title"><div><h3>Configurar geração</h3><p>Escolha modalidade e quantidade.</p></div><span class="panel-icon">✳</span></div><label for="gameLottery">Modalidade</label><select id="gameLottery"></select><div class="field-row"><div><label for="gameCount">Quantidade de jogos</label><input id="gameCount" type="number" min="1" max="100" value="5"></div><div><label for="numbersCount">Números por jogo</label><select id="numbersCount"></select></div></div><div class="filter-box"><div class="filter-heading">Critérios opcionais <span>ORGANIZAÇÃO</span></div><label class="check-row"><input type="checkbox" id="balanceFilter"> <span>Equilibrar pares e ímpares</span></label><label class="check-row"><input type="checkbox" id="rangeFilter"> <span>Distribuir pelas faixas numéricas</span></label><label class="check-row"><input type="checkbox" id="uniqueFilter" checked> <span>Não repetir jogos gerados</span></label></div><button class="gold-button full" id="generateBtn">✦ Gerar combinações</button><p class="micro-copy">Geração aleatória local. Não existe previsão de sorteio.</p></div><div class="panel results-panel"><div class="panel-title"><div><h3>Suas combinações</h3><p id="resultSubtitle">Aguardando geração</p></div><button class="text-button" id="clearGames">Limpar</button></div><div id="generatedGames" class="generated-games"><div class="empty-state"><div class="empty-icon">◎</div><b>Nenhum jogo gerado ainda</b><span>Configure os campos ao lado e clique em gerar.</span></div></div><div class="result-footer"><span id="generatedSummary">Os jogos gerados não são salvos automaticamente.</span><button class="outline-button" id="saveGames" disabled>Salvar jogos</button></div></div></div>
+      </section>
+
+      <section class="view" id="view-probabilities">
+        <div class="eyebrow">MATEMÁTICA APLICADA</div><h1>Calculadora de probabilidades</h1><p class="muted page-intro">Veja como a quantidade de números escolhidos altera as chances de premiação.</p>
+        <div class="prob-layout"><div class="panel"><div class="panel-title"><div><h3>Configurar aposta</h3><p>Modelo combinatório para sorteios numéricos.</p></div></div><label for="probLottery">Modalidade</label><select id="probLottery"></select><label for="probNumbers">Quantidade de números apostados</label><select id="probNumbers"></select><label for="probPrize">Faixa de acertos</label><select id="probPrize"></select><button class="gold-button full" id="calculateBtn">Calcular probabilidade</button></div><div class="panel probability-result" id="probResult"><div class="empty-state"><div class="empty-icon">%</div><b>Seu cálculo aparecerá aqui</b><span>Selecione a modalidade e os parâmetros.</span></div></div></div>
+        <div class="formula-note"><b>Como calculamos?</b><p>Para sorteios em que são extraídos k números de um universo de n, usamos combinações e distribuição hipergeométrica. As regras especiais (colunas, trevos, time do coração e palpites) exigem modelos próprios e serão implementadas em módulos específicos.</p></div>
+      </section>
+
+      <section class="view" id="view-statistics">
+        <div class="eyebrow">LEITURA DE DADOS</div><h1>Estatísticas</h1><p class="muted page-intro">Esta área receberá frequências, atrasos e gráficos após a conexão com os resultados oficiais.</p>
+        <div class="panel stats-placeholder"><div class="empty-state"><div class="empty-icon">⌁</div><b>Base histórica ainda não conectada</b><span>Não exibimos números fictícios como se fossem resultados reais. Na próxima etapa, vamos importar e validar os concursos oficiais.</span></div></div>
+      </section>
+
+      <section class="view" id="view-history">
+        <div class="eyebrow">ORGANIZAÇÃO PESSOAL</div><h1>Meus jogos</h1><p class="muted page-intro">Combinações salvas na sua conta privada.</p>
+        <div class="panel"><div class="panel-title"><div><h3>Jogos salvos</h3><p>Histórico sincronizado com sua conta.</p></div><button class="text-button" id="exportGames">Exportar CSV</button></div><div id="savedGames" class="saved-list"><div class="empty-state compact"><b>Nenhum jogo salvo</b><span>Gere combinações e use “Salvar jogos”.</span></div></div></div>
+      </section>
+
+      <footer class="footer"><span>LOTO INTELIGENTE <b>•</b> Versão 0.3.0</span><span>Ferramenta estatística — não prevê sorteios.</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="helpDialog"><div class="dialog-head"><b>Sobre o LOTO INTELIGENTE</b><button id="closeHelp">×</button></div><p>Esta versão conecta autenticação e jogos salvos ao Supabase. A importação de resultados oficiais será implementada em etapa própria.</p><p><b>Privacidade:</b> os jogos salvos ficam associados à sua conta autenticada. Nunca compartilhe sua senha ou chaves secretas.</p></dialog>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
